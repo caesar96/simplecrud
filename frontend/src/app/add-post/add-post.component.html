@@ -1,0 +1,57 @@
+    <div class="row">
+
+        <!-- FORM  -->      
+        <div class="col-md-12">
+            <form class="form-horizontal" id="form-edit-client">
+            <fieldset>
+                <!-- Form Name -->
+                <legend>{{edit ? 'Editar' : 'Crear' }} Post</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="name">Nombre</label>  
+                    <div class="col-md-4">
+                        <input [(ngModel)]="post.name" id="client-name" name="name" type="text" placeholder="Nombre completo" class="form-control input-md">
+                        <span class="help-block">Nombre completo</span>  
+                    </div>
+                </div>
+
+                <!-- Prepended text-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Correo electrónico</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">@</span>
+                            <input [(ngModel)]="post.email" id="client-email" name="email" class="form-control" placeholder="me@midominio.com" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="title">Título</label>  
+                    <div class="col-md-4">
+                        <input [(ngModel)]="post.title" id="client-name" name="title" type="text" placeholder="Título" class="form-control input-md">
+                        <span class="help-block">Título de la publicación</span>  
+                    </div>
+                </div>                
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="content">Contenido</label>  
+                    <div class="col-md-4">
+                        <textarea [(ngModel)]="post.content" name="content" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+                        <span class="help-block">Escribe aquí el contenido de tu post</span>  
+                    </div>
+                </div>            
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="btn-save"></label>
+                    <div class="col-md-4">
+                        <button (click)="edit ? editPost() : savePost()" d="btn-save" name="btn-save" class="btn btn-success">{{edit ? "Editar" : "Crear"}} Post</button>
+                    </div>
+                </div>
+
+            </fieldset>
+            </form>
+        </div> 
+    </div>

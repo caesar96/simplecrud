@@ -1,0 +1,40 @@
+    <!-- LIST -->
+   <div class="row">
+    <div class=col-md-12>
+
+    <form id="form-list-client">
+    <legend>Lista de posts creados</legend>
+
+    <div class="pull-right" style="margin-bottom: 7px;">
+        <a routerLink="/posts" class="btn btn-default-btn-xs btn-primary"><i class="glyphicon glyphicon-refresh"></i> Actualizar</a>
+        <a routerLink="/add-post" class="btn btn-default-btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i> Crear nuevo</a>
+    </div>
+    <table class="table table-bordered table-condensed table-hover">
+    <thead>
+    <tr>
+        <th>Título</th>
+        <th>Contenido</th>
+        <th>Usuario</th>    
+        <th>Acciones</th>
+    </tr>
+
+    </thead>
+    <tbody id="form-list-client-body">
+        <tr *ngFor="let post of posts">
+            <td>{{post.title}}</td>
+            <td>{{post.content}}</td>
+            <td>{{post.name}}</td>
+            <td>
+                <a [routerLink]="['/posts/', post.id]" title="Ver este post" class="btn btn-default btn-sm "> <i class="glyphicon glyphicon-eye-open text-primary"></i> </a>
+                <a [routerLink]="['/posts/edit', post.id]" title="Editar este post" class="btn btn-default btn-sm "> <i class="glyphicon glyphicon-edit text-primary"></i> </a>
+                <a (click)="deletePost(post.id)" title="Eliminar este post" class="btn btn-default btn-sm "> <i class="glyphicon glyphicon-trash text-danger"></i> </a>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </form>
+
+
+    </div>
+
+</div>
