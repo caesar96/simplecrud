@@ -1,0 +1,13 @@
+diff --git a/backend/src/server.ts b/backend/src/server.ts
+--- backend/src/server.ts
++++ backend/src/server.ts
+@@ -37,5 +37,6 @@
+ 
+ }
+ 
+ const server = new Server();
+-server.start();
+\ No newline at end of file
++server.start();
++//Hogitl
+\ No newline at end of file
